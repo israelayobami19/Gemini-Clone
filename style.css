@@ -37,7 +37,7 @@ body {
     color: var(--text-color);
 }
 
-.header, .typing-form {
+.header, .chat-list, .typing-form {
     max-width: 1000px;
     margin: 0 auto;
 }

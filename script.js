@@ -10,8 +10,8 @@ let userMessage = null;
 let isResponseGenerating = false;
 
 //API CONFIGURATION
-const GEMINI_API_KEY = 'YOUR_API_KEY';
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GEMINI_API_KEY";
+const GEMINI_API_KEY = 'AIzaSyBQXuly5hCoQe_AkD-E7ePtDuxgr8T-QUw';
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 const loadLocalstorageData = () => {
     const savedChats = localStorage.getItem("savedChats")
@@ -88,9 +88,9 @@ const generateAPIResponse = async (incomingMessageDiv) => {
     }
 }
 
-// Show a loadin animation while waaiting for the API response
+// Show a loadin animation while waiting for the API response
 const showloadingAnimation =() => {
-    const html = '<div class="message incoming loading"><div class="message-content"><img src="images/gemini.svg" alt="Gemini Image" class="avatar"><p class="text"></p><div class="loading-indicator"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div></div><span onclick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span></div>';
+    const html = '<div class="message-content"><img src="images/gemini.svg" alt="Gemini Image" class="avatar"><p class="text"></p><div class="loading-indicator"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div></div><span onclick="copyMessage(this)" class="icon material-symbols-rounded">content_copy</span>';
 
     const incomingMessageDiv = createMessageElement(html, "incoming", "loading");
     chatList.appendChild(incomingMessageDiv);
@@ -155,6 +155,5 @@ deleteChatButton.addEventListener("click", () => {
 //prevent default form submission and handle outgoing chat
 typingForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     handleOutgoingChat();
 });
